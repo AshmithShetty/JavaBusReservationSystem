@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.busreservation.controller.SeatSelectionController">
+   <top>
+      <VBox alignment="CENTER" spacing="5.0" style="-fx-background-color: #f0f8ff; -fx-padding: 10; -fx-border-color: lightgrey; -fx-border-width: 0 0 1 0;">
+         <children>
+            <Label fx:id="busDetailsLabel" text="Bus Details: Operator - Type">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="routeDetailsLabel" text="Route: Source to Destination | Date: YYYY-MM-DD" />
+         </children>
+      </VBox>
+   </top>
+   <center>
+  
+      <VBox alignment="CENTER" spacing="15.0" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <GridPane fx:id="seatGridPane" hgap="10.0" vgap="10.0">
+              
+            </GridPane>
+            <Label text="* Grey seats are already booked." style="-fx-font-style: italic;" />
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <
+      <VBox alignment="CENTER" spacing="15.0" style="-fx-border-color: lightgrey; -fx-border-width: 1 0 0 0;">
+         <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </padding>
+         <children>
+            <Label text="Selected Seats:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+           
+            <FlowPane fx:id="selectedSeatsPane" alignment="CENTER" hgap="8.0" vgap="5.0" minHeight="40.0" prefWrapLength="400.0" />
+            <Label fx:id="totalFareLabel" text="Total Fare: ₹0.00">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+        
+            <HBox alignment="CENTER" spacing="20.0">
+               <children>
+                  <Button onAction="#handleProceedToPayment" style="-fx-base: #4CAF50; -fx-font-size: 14px;" text="Proceed to Payment" />
+                  <Button onAction="#handleBackToDashboard" style="-fx-font-size: 14px;" text="Back to Dashboard" />
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+</BorderPane>
